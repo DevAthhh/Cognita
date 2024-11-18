@@ -20,7 +20,7 @@ class LoginUserView(LoginView):
     extra_context = {'title': 'login'}
 
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('dashboard')
 
 
 class RegisterUserView(CreateView):
@@ -35,4 +35,8 @@ class RegisterUserView(CreateView):
 
 def logout_user(request):
     logout(request)
-    return redirect('home')
+    return redirect('dashboard')
+
+
+def profile(request):
+    return HttpResponse('profile')

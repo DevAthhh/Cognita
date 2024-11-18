@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="list-of-notes">
+    <div class="tools">
+        <form action="{% url 'create' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="name" name="name">
+            <button type="submit">create</button>
+        </form>
+    </div>
+    {% for n in notes %}
+    <a href="{% url 'note' n.id %}">{{ n.name }}</a>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block workboard %}
+<form action="">
+    {% csrf_token %}
+    <textarea name="content" id="" cols="30" rows="10">{{ note.content }}</textarea>
+    <button type="submit">done</button>
+</form>
+{% endblock %}
