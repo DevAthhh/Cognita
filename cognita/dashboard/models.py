@@ -1,7 +1,11 @@
 from django.db import models
 
-# Create your models here.
 class Entries(models.Model):
+    """
+    The main table in the database.
+    Which stores all user records...
+    """
+
     name = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     author = models.CharField(max_length=255)

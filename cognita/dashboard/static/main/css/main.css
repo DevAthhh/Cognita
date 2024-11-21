@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+}
+
+.left-part {
+    background: #b9b9b9;
+    width: 15%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-of-notes {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.btn-notes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+.btn-notes > a {
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Nunito', 'regular';
+    font-weight: 700;
+    
+    border-radius: 10px;
+    transition: all .3s;
+    
+    padding-left: 10px;
+
+    margin-top: 10px;
+}
+.btn-notes >a:hover {
+    background: #00000013;
+}
+
+.tools {
+}
+
+.create-btn {
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.create-input {
+    width: calc(80% - 10px);
+    height: 30px;
+    display: flex;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}

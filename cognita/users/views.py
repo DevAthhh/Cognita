@@ -9,15 +9,10 @@ from django.views.generic import CreateView
 from .forms import *
 
 
-# ----- TESTING BLOCK -----
-def index(request):
-    return HttpResponse(f'Hello {request.user}')
-# ----- END TESTING BLOCK -----
-
 class LoginUserView(LoginView):
     form_class = LoginUserForm
-    template_name = 'users/auth.html'
-    extra_context = {'title': 'login'}
+    template_name: str = 'users/auth.html'
+    extra_context: dict = {'title': 'login'}
 
     def get_success_url(self):
         return reverse_lazy('dashboard')
@@ -25,18 +20,22 @@ class LoginUserView(LoginView):
 
 class RegisterUserView(CreateView):
     form_class = RegisterUserForm
-    template_name = 'users/auth.html'
-    extra_context = {'title': 'register'}
+    template_name: str = 'users/auth.html'
+    extra_context: dict = {'title': 'register'}
 
     def get_success_url(self):
         return reverse_lazy('login')
 
+
 # ----- view's function -----
 
 def logout_user(request):
+    """
+    This foo for logout user
+
+    :param request:
+    :return:
+    """
+
     logout(request)
     return redirect('dashboard')
-
-
-def profile(request):
-    return HttpResponse('profile')
